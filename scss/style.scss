@@ -1,0 +1,363 @@
+@import './mixins';
+@import './variables';
+
+
+html {
+    font-size: 16px;
+}
+body {
+    background: #011627;
+    font-family: 'Fira Code', monospace;
+    color: #607B96;
+    font-family: Fira Code;
+    font-size: $lablesText;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.nav-bar {
+    padding-left: 22px;
+    padding-right: 23px;
+    width: 100dvw;
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1E2D3D;
+    min-height: 56.191px;
+}
+
+.footer__bar {
+    a {
+        opacity: 40%;
+    }
+    & a:hover {
+        opacity: 100%;
+    }
+    
+}
+.menu {
+    display: flex;
+    width: 100%;
+    max-width: 710px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left__corner {
+    display: flex;
+}
+
+.left__corner a {
+    border: 1px solid #1E2D3D;
+    border-top: none;
+    padding: 17px 31px 17px 32px;
+}
+
+.right__corner a {
+    border: 1px solid #1E2D3D;
+    border-top: none;
+    border-right: none;
+    padding: 17px 0 17px 32px;
+}
+
+.burger__menu {
+    padding: 17px 0 17px 32px;
+    border: 1px solid #1E2D3D;
+    border-right: none;
+}
+
+
+/*pc*/
+
+@media (min-width: 1240px) {
+    .burger__menu {
+        display: none;
+    }
+}
+
+/*tablets*/
+@media (min-width: 768px) and (max-width: 1240px)  {
+    .left__corner, .right__corner, .game{
+        display: none;
+    }
+
+    html {
+        font-size: 15px;
+    }
+
+    .welcome__text {
+        .complete__game {
+            display: none;
+        }
+        .p__name__h2 {
+            color: #43D9AD;
+        }
+    }
+
+}
+
+
+
+/* mobile */
+@media (max-width: 768px) {
+    .left__corner, .right__corner, .game{
+        display: none;
+    }
+
+    .footer__bar {
+    }
+
+    .welcome__info {
+        padding: 27px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome__text {
+        .complete__game {
+            display: none;
+        }
+        .p__name__h2 {
+            color: #43D9AD;
+        }
+    }
+
+    html {
+        font-size: 12px;
+    }
+    
+}
+
+.welcome__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 129px;
+    
+}
+.welcome__text {
+    width: auto;
+    max-width: 521px;
+}
+
+
+.p__name {
+    font-size: $bodyText;
+    
+}
+
+.p__name__h1 {
+    color: #E5E9F0;
+    font-size: $headlineText;
+    display: block;
+}
+
+.p__name__h2 {
+    color: #4D5BCE;
+    font-size: $subHeadlineText;
+    display: inline-block;
+}
+
+.p__name__h3 {
+    display: inline-block;
+}
+
+
+
+.p__link {
+    margin-top: 81.07px;
+    line-height: 2;
+    display: inline-block;
+}
+.span__blue {
+    color: #4D5BCE;
+}
+.span__green {
+    color: #43D9AD;
+}
+.span__orange {
+    color: #E99287;
+}
+
+.span__white {
+    color: #FFFFFF;
+}
+
+
+
+.game__bg {
+    width: 510px;
+    height: 475px;
+    border-radius: 8px;
+    border: 1px solid #0C1616;
+    background: linear-gradient(150deg, rgba(23, 85, 83, 0.70) 1.7%, rgba(67, 217, 173, 0.09) 81.82%);
+    box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 0.30) inset;
+    backdrop-filter: blur(32px);
+}
+
+
+
+.snake__game {
+    display: flex;
+    justify-content: center;
+    gap: 24.31px;
+    padding-top: 35px;
+}
+
+.bg__snake {
+    width: 238.691px;
+    height: 405.32px;
+    border-radius: 8px;
+    background: rgba(1, 22, 39, 0.84);
+    box-shadow: 1px 5px 11px 0px rgba(2, 18, 27, 0.71) inset;
+    display: flex;
+    justify-content: center;
+}
+
+.snake__gaming {
+    width: 62.346px;
+    height: 192.073px;
+}
+.snake__interface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 66.86px;
+    justify-content: center;
+    
+}
+
+#start__game {
+    
+    @include startGameButton(#01080E, #FEA55F, #FFAC6B)
+
+}
+.play__game {
+    color: #FFF;
+    font-size: $snippetsText;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game__guide {
+    display: flex;
+    flex-direction: column;
+    gap: 20.58px;
+}
+.play__arrows {
+    width: 181.382px;
+    height: 142px;
+    border-radius: 8px;
+    background: rgba(1, 20, 35, 0.19);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15.58px;
+}
+
+#up__arrow, #left__arrow, #down__arrow, #right__arrow {
+    width: 49.079px;
+    height: 28.691px;
+    border-radius: 8px;
+    border: 1px solid #1E2D3D;
+    background-color: #010C15;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.second__line__btn {
+    display: flex;
+    gap: 4.38px;
+    
+}
+.food__left {
+    margin-left: 13.19px;
+    display: flex;
+    flex-direction: column;
+    gap: 10.92px;
+}
+
+
+.snakes__food {
+    display: grid;
+    grid-template-columns: repeat(5, 20.69px);
+    grid-template-rows: repeat(2, 20.69px);
+    gap: 7px;
+}
+
+#skip {
+    @include startGameButton(#FFFFFF, none, rgba(255, 255, 255, 0.70));
+    border: 1px solid #FFF;
+    margin-left: auto;
+}
+
+
+
+
+.footer__bar {
+    padding-left: 22px;
+    padding-right: 23px;
+    width: 100dvw;
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #1E2D3D;
+    border-left: none;
+    border-right: none;
+    margin-top: auto;
+    
+}
+
+.contacts__left__corner {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.contacts__left__corner a {
+    border: 1px solid #1E2D3D;
+    border-bottom: none;
+    padding: 14px 11px 14px 11px;
+}
+
+.contacts__left__corner p {
+    padding-right: 18px;
+}
+
+.contacts__right__corner {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #1E2D3D;
+    padding: 14px 11px 14px 11px;
+    border-right: none;
+    gap: 2px;
+    a {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.left__corner a:active {
+    border-bottom: 3px solid #FEA55F;
+}
+

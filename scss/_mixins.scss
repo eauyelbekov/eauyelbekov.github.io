@@ -1,0 +1,18 @@
+@mixin startGameButton($color, $background, $hoverColor) {
+    color: $color;
+    background-color: $background;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;    
+    width: auto;
+
+    &:hover {
+        background-color: $hoverColor;
+    }
+    &:active {
+        display: none;
+    }
+}
+
+

@@ -32,7 +32,6 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #1E2D3D;
-    min-height: 56.191px;
 }
 
 .footer__bar {
@@ -71,8 +70,8 @@ body {
 
 .burger__menu {
     padding: 17px 0 17px 32px;
-    border: 1px solid #1E2D3D;
-    border-right: none;
+    border-left: 1px solid #1E2D3D;
+    
 }
 
 
@@ -334,10 +333,14 @@ body {
 }
 
 .contacts__left__corner a {
-    border: 1px solid #1E2D3D;
-    border-bottom: none;
+    border-left: 1px solid #1E2D3D;
     padding: 14px 11px 14px 11px;
 }
+
+.contacts__left__corner__a {
+    border-right: 1px solid #1E2D3D;
+}
+
 
 .contacts__left__corner p {
     padding-right: 18px;
@@ -347,9 +350,8 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    border: 1px solid #1E2D3D;
+    border-left: 1px solid #1E2D3D;
     padding: 14px 11px 14px 11px;
-    border-right: none;
     gap: 2px;
     a {
         text-align: center;
